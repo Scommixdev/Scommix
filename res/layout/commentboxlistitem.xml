@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/commentlistitempic"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_action_person" />
+
+        <TextView
+            android:id="@+id/commentlistitemstatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/commentlistitempic"
+            android:clickable="true"
+            android:layout_marginLeft="8dp"
+            android:text="name"
+             android:textColor="@android:color/black"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <TextView
+        android:id="@+id/statuscommentlistitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+ android:textColor="@android:color/black"
+     android:layout_below="@id/commentlistitemstatus"
+        android:scrollbars="vertical"
+        android:layout_toRightOf="@id/commentlistitempic"
+         android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Your status here"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+
+ 
+
+    
+
+</RelativeLayout>

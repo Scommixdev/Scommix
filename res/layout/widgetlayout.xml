@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="#99000000"
+    android:orientation="horizontal" >
+    
+   <Button 
+       android:id="@+id/post"
+     android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+       android:drawableTop="@drawable/content_edit"
+       android:text="Status"
+       
+       android:background="@drawable/selector_trans_button"
+       />
+   
+   <Button 
+       android:id="@+id/scommixlog"
+     android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+       android:drawableTop="@drawable/ic_launcher"
+       
+       
+       android:background="@drawable/selector_trans_button"
+       />
+   
+      <Button 
+       android:id="@+id/messagewidget"
+     android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+       android:drawableTop="@drawable/ic_action_chat"
+       android:text="Message"
+       
+       android:background="@drawable/selector_trans_button"
+       />
+   
+   
+    
+
+</LinearLayout>

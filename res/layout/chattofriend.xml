@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:orientation="vertical" 
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
+
+
+            
+   <ListView android:id="@+id/chatlist"
+        style="?android:attr/listViewWhiteStyle"
+            android:layout_width="fill_parent"
+        android:layout_height="0dip" 
+        android:layout_weight="1" 
+        android:stackFromBottom="true"
+        android:divider="@null"
+        android:dividerHeight="3dp"
+        android:drawSelectorOnTop="false"
+        android:scrollbarStyle="insideOverlay"
+        android:background="@color/compose_message_list_background"
+        android:cacheColorHint="@color/compose_message_list_background"
+        android:transcriptMode="disabled"
+        android:fadingEdgeLength="8dp">
+        <!-- Preview: listitem=@layout/conversation_list_item -->
+    </ListView>
+
+
+  <LinearLayout
+        android:id="@+id/bottom_panel"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff">
+
+        
+
+        <EditText
+            android:textColor="@android:color/black"
+            android:id="@+id/text_editor"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="bottom"
+            android:autoText="true"
+            android:textSize="16sp"
+            android:capitalize="sentences"
+            android:nextFocusRight="@+id/send_button"
+            android:hint="Type to compose"
+            android:minHeight="48dip"
+            android:maxLines="3"
+            android:inputType="textShortMessage|textAutoCorrect|textCapSentences|textMultiLine"
+            android:imeOptions="actionSend|flagNoEnterAction"
+        />
+
+        <ImageButton
+            android:id="@+id/send_button"
+      
+            android:src="@drawable/sendx"
+            android:drawablePadding="0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="48dip"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="4dip"
+            android:contentDescription="Send"
+            android:nextFocusLeft="@+id/text_editor" />
+
+    </LinearLayout>
+
+</LinearLayout>

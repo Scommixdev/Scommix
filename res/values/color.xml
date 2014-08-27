@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <color name="list_item_title">#fff</color>
+    <color name="list_background">#a8a8a8</color>
+    <color name="list_background_pressed">#484848</color>
+    <color name="list_divider">#272727</color>
+    <color name="counter_text_bg">#626262</color>
+    <color name="counter_text_color">#c5c4c4</color>
+    <color name="actionbar">#007c34</color>
+    
+   <color name="buttonstar">#ffff8800</color>
+<color name="dark_slate_gray">#2F4F4F</color>
+	<color name="gray_2">#AFAFAF</color>
+	<color name="gray_1">#C0C0C0</color>
+	<color name="black">#000000</color>
+    <color name="red">#e50822</color>
+        <color name="main_background_start">#2E2E2E</color>
+    <color name="main_background_end">#2C2C2C</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue">#92B83E</color>
+    <!-- card colors -->
+    <color name="card_background">#ffffff</color>
+    <color name="card_shadow_1">#d4d4d4</color>
+    <color name="card_shadow_2">#dddddd</color>
+    <color name="card_detailing">#eee</color>
+    
+     <color name="stroke">#dddddd</color>
+    <color name="text_light">#66000000</color>
+    <color name="card_text">#ff8d8d8d</color>
+    <color name="card_title_text">#ff707070</color>
+    <color name="card_light_text">#ffb5b5b5</color>
+    <color name="card_grid_text">#ff707070</color>
+    <color name="card_separator">#ffe5e5e5</color>
+    <color name="card_border">#ffdedede</color>
+    
+    <integer-array name="colors">
+        <item>@color/holo_blue_dark</item>
+        <item>@color/holo_yellow_dark</item>
+        <item>@color/holo_green_dark</item>
+        <item>@color/holo_purple_dark</item>
+        <item>@color/holo_red_dark</item>
+    </integer-array>
+
+    <integer-array name="gplus_colors">
+        <item>@color/gplus_color_1</item>
+        <item>@color/gplus_color_2</item>
+        <item>@color/gplus_color_3</item>
+        <item>@color/gplus_color_4</item>
+    </integer-array>
+
+    <color name="text_shadow">#000000</color>
+    <color name="gplus_color_1">#3e802f</color>
+    <color name="gplus_color_2">#427fed</color>
+    <color name="gplus_color_3">#b23424</color>
+    <color name="gplus_color_4">#f4b400</color>
+
+    <color name="holo_blue_dark">#0099cc</color>
+    <color name="holo_yellow_dark">#ff8800</color>
+    <color name="holo_green_dark">#669900</color>
+    <color name="holo_purple_dark">#9933cc</color>
+    <color name="holo_red_dark">#cc0000</color>
+    
+      <color name="blue_pressed">#ff0099cc</color>
+    <color name="blue_normal">#ff33b5e5</color>
+    <color name="green_complete">#ff99cc00</color>
+    <color name="purple_progress">#ffaa66cc</color>
+    <color name="red_error">#ffff4444</color>
+
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="holo_green_light">#ff99cc00</color>
+    <color name="holo_orange_light">#ffffbb33</color>
+    <color name="holo_red_light">#ffff4444</color>
+     <color name="compose_message_list_background">#fff5f8fa</color>
+     <color name="feed_bg">#d3d6db</color>
+
+    
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp" >
+
+    <Button
+        android:id="@+id/buttonEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewMessage"
+        android:layout_centerHorizontal="true"
+         android:background="@android:color/white"
+        android:text="@string/empty_button" />
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:drawableTop="@drawable/ic_empty"
+        android:gravity="center_horizontal"
+        
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

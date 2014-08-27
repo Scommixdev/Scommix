@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+      android:background="@drawable/ab_solid_scommix"
+    android:orientation="vertical" >
+    
+<ProgressBar 
+    android:id="@+id/progressbargetuserinfoo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+ 
+    android:layout_centerInParent="true"
+    />
+
+   <TextView
+        android:id="@+id/scommixtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/welcome_to_scommix"
+        android:textSize="60sp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+<TextView
+    android:id="@+id/getuserdatatextview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/progressbargetuserinfoo"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="27dp"
+    android:text="Authenticating User..."
+    android:textColor="@android:color/white"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
+</RelativeLayout>

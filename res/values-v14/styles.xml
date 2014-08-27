@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- File created by the Android Action Bar Style Generator
+
+     Copyright (C) 2011 The Android Open Source Project
+     Copyright (C) 2012 readyState Software Ltd
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+  <style name="Theme.Scommix" parent="@style/Theme.AppCompat.Light">
+        <item name="android:actionBarItemBackground">@drawable/selectable_background_scommix</item>
+        <item name="android:popupMenuStyle">@style/PopupMenu.Scommix</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Scommix</item>
+        <item name="android:actionBarTabStyle">@style/ActionBarTabStyle.Scommix</item>
+        <item name="android:actionDropDownStyle">@style/DropDownNav.Scommix</item>
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Scommix</item>
+        <item name="android:actionModeBackground">@drawable/cab_background_top_scommix</item>
+        <item name="android:actionModeSplitBackground">@drawable/cab_background_bottom_scommix</item>
+        <item name="android:actionModeCloseButtonStyle">@style/ActionButton.CloseMode.Scommix</item>
+        
+        
+    </style>
+    
+  
+    
+   <style name="MyActionBarTitleText"
+           parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+        <!-- The textColor property is backward compatible with the Support Library -->
+    </style>
+    
+ <style name="SubTitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+             <item name="android:textColor">@android:color/white</item>
+     
+     
+ </style>
+  
+
+    <style name="ActionBar.Solid.Scommix" parent="@style/Widget.AppCompat.Light.ActionBar.Solid">
+        <item name="android:background">@drawable/ab_solid_scommix</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_scommix</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_solid_scommix</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Scommix</item>
+      <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="android:subtitleTextStyle">@style/SubTitle</item>
+    </style>
+
+    <style name="ActionBar.Transparent.Scommix" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@drawable/ab_transparent_scommix</item>
+        <item name="android:progressBarStyle">@style/ProgressBar.Scommix</item>
+    </style>
+    
+    <!-- this style is only referenced in a Light.DarkActionBar based theme -->
+    <style name="Theme.Scommix.Widget" parent="@style/Theme.AppCompat">
+        <item name="android:popupMenuStyle">@style/PopupMenu.Scommix</item>
+        <item name="android:dropDownListViewStyle">@style/DropDownListView.Scommix</item>
+    </style>
+</resources>

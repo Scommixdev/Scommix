@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+     
+     >
+
+
+<!--  <ImageView -->
+<!--      android:id="@+id/deletenotification" -->
+<!--      android:layout_width="20dp" -->
+<!--      android:layout_height="20dp" -->
+<!--      android:background="@drawable/selector_trans_button" -->
+<!--      android:layout_alignParentRight="true" -->
+<!--      android:layout_alignTop="@+id/notificationtime" -->
+<!--      android:src="@drawable/cross" /> -->
+
+ <TextView
+     android:id="@+id/notificationtext"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+  	android:textSize="18sp"
+     android:layout_alignParentLeft="true"
+     android:layout_marginLeft="15dp"
+     android:text="text for notification" />
+
+ <TextView
+     android:id="@+id/notificationtime"
+     style="@android:style/TextAppearance.Small"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:layout_alignParentRight="true"
+     android:layout_below="@+id/notificationtext"
+     android:layout_marginRight="22dp"
+     android:text="fkjbvfiavbhlfa timee"
+     android:textColor="@android:color/darker_gray" />
+
+    </RelativeLayout>

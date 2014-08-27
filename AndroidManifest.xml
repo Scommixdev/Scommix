@@ -1,0 +1,323 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.svimedu.scommix"
+    android:versionCode="17"
+    android:versionName="1.70" >
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="19" />
+    
+        <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+        
+        
+        
+<!-- PERMISSIONS PART STARTS -->
+    <uses-permission android:name="android.permission.INTERNET"
+         />
+ 
+ <uses-permission 
+      android:name="android.permission.SYSTEM_ALERT_WINDOW"
+     />
+ 
+ <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+ <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+ <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+ <uses-permission android:name="android.permission.VIBRATE"/>
+
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  
+  
+  
+  <uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.VIBRATE" />
+<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+ 
+<!--
+  IMPORTANT: Change "com.parse.starter.permission.C2D_MESSAGE" in the lines below
+  to match your app's package name + ".permission.C2D_MESSAGE".
+-->
+
+<permission android:protectionLevel="signature"
+    android:name="com.svimedu.scommix.permission.C2D_MESSAGE" />
+<uses-permission android:name="com.svimedu.scommix.permission.C2D_MESSAGE" />
+<!-- PERMISSIONS PART ENDS -->
+
+
+
+<!-- Application Starts -->
+    <application
+       android:name="com.svimedu.scommix.MainApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Scommix" >
+        
+
+             
+
+<!--         Welcome Activity -->
+         <activity android:name="com.svimedu.scommix.Welcome"
+              android:label="@string/app_name"
+              android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+              >
+                <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>  
+    
+    </activity>
+    
+<!--          Login Activity -->
+    <activity 
+        android:name="com.svimedu.scommix.LoginFirstRun"
+		  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+        ></activity>
+    
+
+    
+<!--     Chat With Friend -->
+    <activity 
+        android:name="com.scommix.chatmessage.ChatWithFriend"
+           android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+        
+        ></activity>
+    
+<!--   User  Profile Activity -->
+    
+     <activity 
+        android:name="com.scommix.homeandprofile.MyProfileActivity"
+       android:parentActivityName="com.scommix.navigationmainactivity.MainActivity"
+   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+        
+        >
+          <intent-filter>
+        <action android:name="android.intent.action.SEND" />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="image/*" />
+    </intent-filter>
+        
+              <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.scommix.navigationmainactivity.MainActivity" />
+              
+    </activity>
+    
+<!-- MainActivity -->
+    
+ <activity 
+             android:name="com.scommix.navigationmainactivity.MainActivity"
+                                  android:uiOptions="splitActionBarWhenNarrow"  
+                       android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+          >
+  <meta-data android:name="android.support.UI_OPTIONS"
+                   android:value="splitActionBarWhenNarrow" />
+      <meta-data
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="com.scommix.navigationmainactivity.MainActivity" />
+      
+<!--       Get All Info Activity -->
+      </activity>
+      
+ <!-- New welcome Page -->
+      <activity android:name="com.scommix.firstrun.Newdemo" ></activity>
+         
+         
+         <activity android:name="com.svimedu.scommix.GetAllUserInfo"
+                          android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+             
+             >
+             
+         </activity>
+         
+<!--          Search Friends Activity -->
+         
+         <activity 
+             android:name="com.scommix.friendsandsearch.SearchResultsActivity"
+          android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+				android:theme="@style/Theme.search"
+                 android:parentActivityName="com.scommix.navigationmainactivity.MainActivity"
+             
+             >
+      
+        </activity>
+        
+<!--          Time Table Activity -->
+        
+        <activity android:name="com.scommix.navigationmainactivity.TimeTable"
+                  android:parentActivityName="com.scommix.navigationmainactivity.MainActivity"
+                  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            
+            >
+            
+            <meta-data	
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="com.scommix.navigationmainactivity.MainActivity" /> 
+        </activity>
+        
+<!--         Friend Activity -->
+        
+        <activity 
+            android:name="com.scommix.friendsandsearch.FriendActivity"
+                      android:parentActivityName="com.scommix.navigationmainactivity.MainActivity"
+               android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            
+            >
+            
+              
+              <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.scommix.navigationmainactivity.MainActivity" />
+        </activity>
+        
+<!--         Status Update -->
+        
+         <activity 
+             android:name="com.scommix.homeandprofile.Status"
+                android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+             
+                              android:parentActivityName="com.scommix.navigationmainactivity.MainActivity"
+                              android:windowSoftInputMode="adjustResize" 
+               >
+              <intent-filter>
+                  
+        <action android:name="android.intent.action.SEND"
+       
+             />
+        <category android:name="android.intent.category.DEFAULT" />
+        <data android:mimeType="text/plain" />
+    </intent-filter>
+             
+             
+         </activity>
+          
+       
+         
+<!-- Crop Images Activity -->
+     
+     <activity 
+         android:name="com.scommix.homeandprofile.CropImageActivity"
+     	 android:theme="@style/Theme.scommixblack"
+         android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+         
+         ></activity>
+     
+<!--      Check Likes Activity from Comment Box -->
+     
+    <activity 
+        android:name="com.scommix.homeandprofile.CheckLikesPopup"
+     	   android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+     	
+        ></activity>
+   
+  
+<!--  Comment Box -->
+
+<activity 
+    android:name="com.scommix.homeandprofile.CommentBox"
+  
+        android:parentActivityName="com.scommix.navigationmainactivity.MainActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+   ></activity>
+
+<!-- fee detail activity -->
+
+<activity 
+    android:name="com.scommix.feedetails.FeeDetailActivity"
+      android:parentActivityName="com.scommix.navigationmainactivity.MainActivity"
+    android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+    >
+           <meta-data	
+     android:name="android.support.PARENT_ACTIVITY"
+     android:value="com.scommix.navigationmainactivity.MainActivity" /> 
+    
+</activity>
+
+ 
+<!-- Google play services version info -->
+  <meta-data 
+    android:name="com.google.android.gms.version"
+    android:value="@integer/google_play_services_version"
+    />
+  
+
+
+<!-- Scommix Content Provider -->
+
+          <provider 
+            android:name="com.svimedu.scommix.ScommixContentProvider"
+			android:authorities="com.svimedu.scommix.ScommixContentProvider"
+			android:exported="false" 
+			android:enabled="true" 
+           
+            ></provider>
+
+
+   
+ 
+
+<!-- 			Widget for scommix -->
+<receiver android:name="com.svimedu.scommix.ScommixWidget" >
+   <intent-filter>
+      <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+   </intent-filter>
+   <meta-data android:name="android.appwidget.provider"
+      android:resource="@xml/appwidget" />
+</receiver>
+
+<!-- Chat messages service  -->
+<service android:name="com.scommix.chatmessage.ChatService"
+     android:icon="@drawable/ic_launcher"
+           
+    ></service>
+
+<activity 
+    android:name="tcptest.MyActivity"
+    ></activity>
+
+
+    
+<activity 
+    android:name="com.scommix.viewpager.Main"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+    
+    >
+       
+      
+</activity>
+
+
+<service android:name="com.parse.PushService" />
+<receiver android:name="com.parse.ParseBroadcastReceiver">
+  <intent-filter>
+    <action android:name="android.intent.action.BOOT_COMPLETED" />
+    <action android:name="android.intent.action.USER_PRESENT" />
+  </intent-filter>
+</receiver>
+<receiver android:name="com.parse.GcmBroadcastReceiver"
+    android:permission="com.google.android.c2dm.permission.SEND">
+  <intent-filter>
+    <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+    <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+ 
+    <!--
+      IMPORTANT: Change "com.parse.starter" to match your app's package name.
+    -->
+    <category android:name="com.svimedu.scommix" />
+  </intent-filter>
+</receiver>
+
+
+
+    </application>
+<!-- Application Ends  -->
+</manifest>

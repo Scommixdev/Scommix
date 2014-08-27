@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:background="@drawable/card_background"
+    >
+    <TextView android:id="@+id/Dateattendance" style="@android:style/TextAppearance.Medium" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:text="20th Feb 2014"/>
+
+    <TextView
+        android:id="@+id/attendanceStudentName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/Dateattendance"
+        android:layout_below="@+id/Dateattendance"
+        android:layout_marginTop="15dp"
+        android:text="Anmol Verma"
+         />
+
+    <TextView
+        android:id="@+id/attendancetype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/attendanceStudentName"
+        android:layout_below="@+id/attendanceStudentName"
+        android:text="Present" />
+
+    <TextView
+        android:id="@+id/attendanceperiod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/attendancetype"
+        android:layout_below="@+id/attendancetype"
+        android:text="Period 1" />
+
+    <TextView
+        android:id="@+id/attendancesubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/attendanceperiod"
+        android:layout_below="@+id/attendanceperiod"
+        android:text="Maths" />
+
+</RelativeLayout>

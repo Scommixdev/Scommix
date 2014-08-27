@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/headerprofile"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+  
+    android:orientation="vertical"
+ >
+    
+
+<ImageView
+    android:id="@+id/profilepic"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:layout_alignParentRight="true"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="29dp"
+     />
+
+<TextView
+    android:id="@+id/headerusername"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:layout_marginRight="24dp"
+    android:layout_toLeftOf="@+id/profilepic"
+    android:singleLine="true"
+    android:textSize="20sp"
+    android:text="Ronit Arora"
+    />
+
+<ImageView
+    android:id="@+id/institutelogo"
+    android:layout_width="120dp"
+    android:layout_height="70dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true" />
+ 
+    </RelativeLayout>

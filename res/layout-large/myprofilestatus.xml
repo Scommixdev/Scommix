@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.scommix.customviews.GoogleNowLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+         xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/myprofilestatuslist"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:numColumns="2"
+        android:clickable="false"
+        android:divider="@null"
+        android:fastScrollEnabled="false"
+        android:dividerHeight="10dp"
+        android:scrollbars="none"
+        
+        ptr:ptrMode="both"
+        ptr:ptrDrawable="@drawable/ic_launcher" 
+        >
+    </com.handmark.pulltorefresh.library.PullToRefreshGridView>
+
+    
+
+</com.scommix.customviews.GoogleNowLayout>

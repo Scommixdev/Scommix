@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ab_solid_scommix"
+    android:orientation="vertical" >
+
+    <ProgressBar
+        android:id="@+id/welcomeprogress"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:indeterminate="true" />
+
+    <TextView
+        android:id="@+id/scommixtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/welcomeprogress"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome_to_scommix"
+        android:textColor="@android:color/white"
+        android:textSize="60sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/inslogo"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/scommixtext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="21dp" />
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/inslogo" />
+
+</RelativeLayout>
