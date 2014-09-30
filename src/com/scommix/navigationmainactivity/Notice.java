@@ -36,6 +36,7 @@ import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
+import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.util.Linkify;
 import android.util.Log;
@@ -601,7 +602,7 @@ public class Notice extends Fragment{
 			
 			holder.statustextview.setAutoLinkMask(0); 
 			holder.nametextview.setText(noticeupdates.get(position).signature__c);
-			holder.statustextview.setText(noticeupdates.get(position).notice);
+			holder.statustextview.setText(Html.fromHtml(noticeupdates.get(position).notice));
 			Linkify.addLinks(holder.statustextview, Linkify.PHONE_NUMBERS | Linkify.WEB_URLS);
 
 			// Recognize all of the default link text patterns 

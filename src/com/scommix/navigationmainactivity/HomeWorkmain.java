@@ -1,21 +1,9 @@
 package com.scommix.navigationmainactivity;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-
-
-
-
 import java.util.Calendar;
 import java.util.Date;
-import com.roomorama.caldroid.CaldroidFragment;
-import com.roomorama.caldroid.CaldroidListener;
-import com.scommix.WebServices.Common.Common;
-import com.scommix.WebServices.Common.online;
-
-import com.scommix.sharedpref.ScommixSharedPref;
-import com.svimedu.scommix.R;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -26,7 +14,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +26,13 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.roomorama.caldroid.CaldroidFragment;
+import com.roomorama.caldroid.CaldroidListener;
+import com.scommix.WebServices.Common.Common;
+import com.scommix.WebServices.Common.online;
+import com.scommix.sharedpref.ScommixSharedPref;
+import com.svimedu.scommix.R;
 
 public class HomeWorkmain extends Fragment implements OnClickListener{
 	
