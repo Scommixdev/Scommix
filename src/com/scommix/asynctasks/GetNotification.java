@@ -109,7 +109,7 @@ public class GetNotification extends AsyncTask<Void, Void, Void>
 		envelope.dotNet = true;
 
 		envelope.setOutputSoapObject(request);
-	
+		
 		
 		HttpTransportSE httpTransport = new HttpTransportSE(URL);
 	
@@ -118,7 +118,7 @@ public class GetNotification extends AsyncTask<Void, Void, Void>
 		httpTransport.call(SOAP_ACTION, envelope);
 		SoapObject results=(SoapObject)envelope.getResponse();
 		
-		
+		System.out.println("valuees---->>>" + results);
 		int i;
 
 		for(i=0;i<results.getPropertyCount();i++)
@@ -137,10 +137,11 @@ public class GetNotification extends AsyncTask<Void, Void, Void>
 			notificationtype.add(i, ntype.toString());
 			notificationuserid.add(i, userid.toString());
 		}
-		//new Common().UpadteSeenNotification(ScommixSharedPref.getUSERID());
+		
+		new Common().UpadteSeenNotification(ScommixSharedPref.getUSERID());
 		
 	
-				notificationcount=i;
+//				notificationcount=i;
 		}
 		catch(Exception e)
 		{
@@ -183,11 +184,11 @@ public class GetNotification extends AsyncTask<Void, Void, Void>
 				}
 			});
 			
-			Intent i=new Intent();
-			i.setAction("notificationcount");
-			i.addCategory(Intent.CATEGORY_DEFAULT);
-			i.putExtra("count", notificationcount);
-			activity.sendBroadcast(i);
+//			Intent i=new Intent();
+//			i.setAction("notificationcount");
+//			i.addCategory(Intent.CATEGORY_DEFAULT);
+//			i.putExtra("count", notificationcount);
+//			activity.sendBroadcast(i);
 		}
 		catch(Exception e)
 		{

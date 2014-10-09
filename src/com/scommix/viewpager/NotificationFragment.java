@@ -126,8 +126,8 @@ public class NotificationFragment extends Fragment {
 	class GetNotification1 extends AsyncTask<Void, Void, Void>
 	{
 		
-		final String SOAP_ACTION = "http://tempuri.org/GetNotification";
-	    final String METHOD_NAME = "GetNotification";
+		final String SOAP_ACTION = "http://tempuri.org/GetNotification1";
+	    final String METHOD_NAME = "GetNotification1";
 	    final String NAMESPACE =
 	             "http://tempuri.org/";
 	    final String URL =
@@ -181,8 +181,9 @@ public class NotificationFragment extends Fragment {
 				notificationtext.add(name.toString()+" "+text.toString());
 				notificationtype.add(ntype.toString());
 				notificationuserid.add(userid.toString());
+				
 			}
-			//new Common().UpadteSeenNotification(ScommixSharedPref.getUSERID());
+			new Common().UpadteSeenNotification(ScommixSharedPref.getUSERID());
 			
 		
 					notificationcount=i;
