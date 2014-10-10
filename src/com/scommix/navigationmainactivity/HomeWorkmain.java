@@ -7,25 +7,19 @@ import java.util.Date;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.roomorama.caldroid.CaldroidFragment;
 import com.roomorama.caldroid.CaldroidListener;
@@ -45,8 +39,6 @@ ArrayList<String> date;
 
 ArrayList<String> subject;
 
-
-MyAdapter homeworkadapter;
 
 DatePicker dt;
 Button search;
@@ -257,8 +249,8 @@ class GetHomeworkbydate extends  AsyncTask<Void, Void, Void>
 			Log.i("date", temp.get(i).date);
 			workdetail.add(i, temp.get(i).workdetail);
 			Log.i("work", temp.get(i).workdetail);
-			subject.add(i, temp.get(i).subject);
-			Log.i("subject", temp.get(i).subject);
+//			subject.add(i, temp.get(i).subject);
+//			Log.i("subject", temp.get(i).subject);
 		}
 		return null;
 	}
@@ -273,70 +265,78 @@ class GetHomeworkbydate extends  AsyncTask<Void, Void, Void>
 		if(date.size()!=0)
 		{
 			
-			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-					getActivity());
-	 
-				// set title
-				alertDialogBuilder.setTitle("Attendance");
-				LayoutInflater inflater = (LayoutInflater) getActivity()
-						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-						View layout = inflater.inflate(R.layout.attendancepopup,
-						(ViewGroup) rootView.findViewById(R.id.popup_element));
-				alertDialogBuilder.setView(layout);
-				
-				homeListView=(ListView)layout.findViewById(R.id.attendancelist);
-				homeListView.setOnItemClickListener(new OnItemClickListener() {
-
-					@Override
-					public void onItemClick(AdapterView<?> arg0, View view,
-							int position, long arg3) {
-						// TODO Auto-generated method stub
-						
-						AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
-								getActivity());
-				 
-							// set title
-							alertDialogBuilder.setTitle(subject.get(position));
-							alertDialogBuilder.setMessage(workdetail.get(position));
-						
-					
-							
-							alertDialogBuilder.setCancelable(false)
-								
-								.setNegativeButton("Close",new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,int id) {
-										// if this button is clicked, just close
-										// the dialog box and do nothing
-										dialog.cancel();
-									}
-								});
-				 
-								// create alert dialog
-								AlertDialog alertDialog = alertDialogBuilder.create();
-				 
-					      alertDialog.show();
-					}
-				});
+			getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.container, new showHomeWork(homeListView,workdetail,date)).addToBackStack(null).commit();
 			
-				alertDialogBuilder.setCancelable(false)
-					
-					.setNegativeButton("Close",new DialogInterface.OnClickListener() {
-						public void onClick(DialogInterface dialog,int id) {
-							// if this button is clicked, just close
-							// the dialog box and do nothing
-							dialog.cancel();
-						}
-					});
-	 
-					// create alert dialog
-					AlertDialog alertDialog = alertDialogBuilder.create();
-	 
-					// show it
-				
-
-					homeworkadapter=new MyAdapter(getActivity(),date,subject,workdetail);
-					homeListView.setAdapter(homeworkadapter);
-		      alertDialog.show();
+//			
+//			AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//					getActivity());
+//	 
+//				// set title
+//				alertDialogBuilder.setTitle("Attendance");
+//				LayoutInflater inflater = (LayoutInflater) getActivity()
+//						.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//						View layout = inflater.inflate(R.layout.attendancepopup,
+//						(ViewGroup) rootView.findViewById(R.id.popup_element));
+//				alertDialogBuilder.setView(layout);
+//				
+//				homeListView=(ListView)layout.findViewById(R.id.attendancelist);
+//				homeListView.setOnItemClickListener(new OnItemClickListener() {
+//
+//					@Override
+//					public void onItemClick(AdapterView<?> arg0, View view,
+//							int position, long arg3) {
+//						// TODO Auto-generated method stub
+//						
+//						AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//								getActivity());
+//				 
+//							// set title
+////							alertDialogBuilder.setTitle(subject.get(position));
+//							alertDialogBuilder.setMessage(workdetail.get(position));
+//						
+//					
+//							
+//							alertDialogBuilder.setCancelable(false)
+//								
+//								.setNegativeButton("Close",new DialogInterface.OnClickListener() {
+//									public void onClick(DialogInterface dialog,int id) {
+//										// if this button is clicked, just close
+//										// the dialog box and do nothing
+//										dialog.cancel();
+//									}
+//								});
+//				 
+//								// create alert dialog
+//								AlertDialog alertDialog = alertDialogBuilder.create();
+//				 
+//								
+////								homeworkadapter=new MyAdapter(getActivity(),date,subject,workdetail);
+//								homeworkadapter=new MyAdapter(getActivity(),date,workdetail);
+//
+//								homeListView.setAdapter(homeworkadapter);
+//								
+//					      alertDialog.show();
+//					}
+//				});
+//			
+////				alertDialogBuilder.setCancelable(false)
+////					
+////					.setNegativeButton("Close",new DialogInterface.OnClickListener() {
+////						public void onClick(DialogInterface dialog,int id) {
+////							// if this button is clicked, just close
+////							// the dialog box and do nothing
+////							dialog.cancel();
+////						}
+////					});
+////	 
+////					// create alert dialog
+////					AlertDialog alertDialog = alertDialogBuilder.create();
+////	 
+////					// show it
+////				
+////
+////					
+////		      alertDialog.show();
 		}
 		else
 		{
@@ -376,90 +376,109 @@ class GetHomeworkbydate extends  AsyncTask<Void, Void, Void>
 }
 
 
+@Override
+public void onClick(View arg0) {
+	// TODO Auto-generated method stub
 	
-	class MyAdapter extends BaseAdapter
-	{
-		  HomeWorkmain ctx;
-		 LayoutInflater inflaterr=null;
-		
-		 ArrayList<String> date;
-		 
-			ArrayList<String> subject; 
-			ArrayList<String> workdetail;
-
-		
-			
-
-		public MyAdapter(FragmentActivity activity, ArrayList<String> date,
-				ArrayList<String> subject, ArrayList<String> workdetail) {
-			// TODO Auto-generated constructor stub
-			this.date=date;
-			this.subject=subject;
-			this.workdetail=workdetail;
-			inflaterr=(LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		}
-		
-
-		@Override
-		public int getCount() {
-			// TODO Auto-generated method stub
-			return subject.size();
-		}
-
-		@Override
-		public Object getItem(int position) {
-			// TODO Auto-generated method stub
-			return position;
-		}
-
-		@Override
-		public long getItemId(int position) {
-			// TODO Auto-generated method stub
-			return position;
-		}
-
-		@Override
-		public View getView(int position, View convertView, ViewGroup parent) {
-			// TODO Auto-generated method stub
-			View vi=convertView;
-			ViewHolder holder;
-			if(convertView==null)
-			{
-				vi=inflaterr.inflate(R.layout.row_homeworklist, null);
-				 holder = new ViewHolder();
-				holder.timing = (TextView)vi.findViewById(R.id.timing); // duration
-		        holder.subject=(TextView)vi.findViewById(R.id.subject);
-				holder.workdetail=(TextView)vi.findViewById(R.id.workdetails);
-				vi.setTag(holder);
-		   
-			}
-			else{
-				holder=(ViewHolder)vi.getTag();
-			}
-			
-				holder.timing.setText(date.get(position));
-			
-			
-			holder.subject.setText(subject.get(position));
-		
-			holder.workdetail.setText(workdetail.get(position));
-			 return vi;
-		}
+}
 
 
 	
-		
-	}
-	static class ViewHolder{
-		TextView timing,subject,workdetail;
-		
-	}
-	
-	@Override
-	public void onClick(View v) {
-		// TODO Auto-generated method stub
-		
-	}
+//	class MyAdapter extends BaseAdapter
+//	{
+//		  HomeWorkmain ctx;
+//		 LayoutInflater inflaterr=null;
+//		
+//		 ArrayList<String> date;
+//		 
+////			ArrayList<String> subject; 
+//			ArrayList<String> workdetail;
+//			FragmentActivity activity;
+//		
+//			
+//
+//public MyAdapter(FragmentActivity activity, ArrayList<String> date,
+//		ArrayList<String> workdetail) { 
+//		// TODO Auto-generated constructor stub
+//		this.date=date;
+////		this.subject=subject;
+//		this.workdetail=workdetail;
+//		this.activity=activity;
+//
+//}
+//
+////		public MyAdapter(FragmentActivity activity, ArrayList<String> date,
+////				ArrayList<String> subject, ArrayList<String> workdetail) {
+////			// TODO Auto-generated constructor stub
+////			this.date=date;
+//////			this.subject=subject;
+////			this.workdetail=workdetail;
+////			inflaterr=(LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+////		}
+//		
+//
+//		@Override
+//		public int getCount() {
+//			// TODO Auto-generated method stub
+//			return workdetail.size();
+//		}
+//
+//		@Override
+//		public Object getItem(int position) {
+//			// TODO Auto-generated method stub
+//			return position;
+//		}
+//
+//		@Override
+//		public long getItemId(int position) {
+//			// TODO Auto-generated method stub
+//			return position;
+//		}
+//
+//		@Override
+//		public View getView(int position, View convertView, ViewGroup parent) {
+//			// TODO Auto-generated method stub
+//			inflaterr=(LayoutInflater)activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//
+//			View vi=convertView;
+//			ViewHolder holder;
+//			if(convertView==null)
+//			{
+//				vi=inflaterr.inflate(R.layout.row_homeworklist, parent);
+//				 holder = new ViewHolder();
+//				holder.timing = (TextView)vi.findViewById(R.id.timing); // duration
+////		        holder.subject=(TextView)vi.findViewById(R.id.subject);
+//				holder.workdetail=(TextView)vi.findViewById(R.id.workdetails);
+//				vi.setTag(holder);
+//		   
+//			}
+//			else{
+//				holder=(ViewHolder)vi.getTag();
+//			}
+//			
+//				holder.timing.setText(date.get(position));
+//			
+//			
+////			holder.subject.setText(subject.get(position));
+//		
+//			holder.workdetail.setText(workdetail.get(position));
+//			 return vi;
+//		}
+//
+//
+//	
+//		
+//	}
+//	static class ViewHolder{
+//		TextView timing,subject,workdetail;
+//		
+//	}
+//	
+//	@Override
+//	public void onClick(View v) {
+//		// TODO Auto-generated method stub
+//		
+//	}
 
 	
 }

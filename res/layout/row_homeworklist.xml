@@ -50,14 +50,14 @@
 
         </RelativeLayout>
 
-        <RelativeLayout
+      <!--   <RelativeLayout
             android:id="@+id/relativeLayout1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:layout_weight="1"
             android:orientation="horizontal" >
-        </RelativeLayout>
+        </RelativeLayout> -->
     </LinearLayout>
 
     <TextView
@@ -68,7 +68,8 @@
         android:layout_centerHorizontal="true"
         android:text="Subject"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@android:color/black" />
+        android:textColor="@android:color/black" 
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/timing"
@@ -82,11 +83,11 @@
 
     <TextView
         android:id="@+id/workdetails"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/timing"
         android:layout_centerHorizontal="true"
-       android:singleLine="true"
+     
         android:text="The homework details"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@android:color/black" />
