@@ -13,18 +13,6 @@
     <!-- android:layout_alignParentRight="true" -->
     <!-- android:layout_alignTop="@+id/notificationtime" -->
     <!-- android:src="@drawable/cross" /> -->
-    
-    
-
-    <TextView
-        android:id="@+id/notificationtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:text="text for notification"
-        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/notificationtime"
@@ -34,7 +22,24 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/notificationtext"
         android:layout_marginRight="22dp"
-        android:text="fkjbvfiavbhlfa timee"
+        android:text="timee"
         android:textColor="@android:color/darker_gray" />
+
+    <ImageView
+        android:id="@+id/notificationimage"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="14dp" />
+
+    <TextView
+        android:id="@+id/notificationtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="14dp"
+        android:layout_toRightOf="@+id/notificationimage"
+        android:text="text for notification"
+        android:textSize="18sp" />
 
 </RelativeLayout>

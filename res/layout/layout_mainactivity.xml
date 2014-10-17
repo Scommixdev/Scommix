@@ -1,48 +1,33 @@
-<android.support.v4.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-   
-    android:layout_height="match_parent">
+    android:layout_height="match_parent" >
 
-<FrameLayout
+    <FrameLayout
         android:id="@+id/frame_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
-        />
+        android:layout_height="match_parent" />
 
-    
-   
-    
-     <com.handmark.pulltorefresh.library.PullToRefreshListView
-          xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/list_slidermenu"
         android:layout_width="260dp"
-       	android:layout_height="match_parent"
+        android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@color/ScommixBaseColor"
         android:choiceMode="singleChoice"
-       
-        android:dividerHeight="1dp"       
-       
-        android:background="@android:color/white"
-         
-        
-        ></com.handmark.pulltorefresh.library.PullToRefreshListView>
+        android:dividerHeight="1dp" >
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
-
-
- 
- <com.handmark.pulltorefresh.library.PullToRefreshListView
+    <com.handmark.pulltorefresh.library.PullToRefreshListView
         android:id="@+id/right_drawer"
-           android:layout_width="260dp"
+        android:layout_width="260dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
+        android:background="@android:color/white"
         android:choiceMode="singleChoice"
-        android:scrollbars="none"
-     
         android:dividerHeight="1dp"
-       android:background="@android:color/white" 
-       ></com.handmark.pulltorefresh.library.PullToRefreshListView>
+        android:scrollbars="none" >
+    </com.handmark.pulltorefresh.library.PullToRefreshListView>
 
-            
 </android.support.v4.widget.DrawerLayout>

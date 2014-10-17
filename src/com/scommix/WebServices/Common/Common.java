@@ -1303,6 +1303,7 @@ public class Common {
                     Object obj = result.getProperty(0);
                     SoapObject j = (SoapObject)obj;
                     Vectoronline resultVariable = new Vectoronline(j);
+                   
                     return resultVariable;
                 }
             }

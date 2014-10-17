@@ -136,7 +136,7 @@ public final class R {
 		public static final int abc_split_action_bar_is_narrow = 0x7f070002;
 	}
 	public static final class color {
-		public static final int abc_search_url_text_holo = 0x7f080055;
+		public static final int abc_search_url_text_holo = 0x7f080056;
 		public static final int abc_search_url_text_normal = 0x7f080000;
 		public static final int abc_search_url_text_pressed = 0x7f080002;
 		public static final int abc_search_url_text_selected = 0x7f080001;
@@ -264,11 +264,11 @@ public final class R {
 		public static final int calendar_next_arrow = 0x7f02006e;
 		public static final int calendar_prev_arrow = 0x7f02006f;
 		public static final int cell_bg = 0x7f020071;
-		public static final int disable_cell = 0x7f020097;
-		public static final int left_arrow = 0x7f0200c6;
-		public static final int red_border = 0x7f0200eb;
-		public static final int red_border_gray_bg = 0x7f0200ec;
-		public static final int right_arrow = 0x7f0200ef;
+		public static final int disable_cell = 0x7f020098;
+		public static final int left_arrow = 0x7f0200c7;
+		public static final int red_border = 0x7f0200ed;
+		public static final int red_border_gray_bg = 0x7f0200ee;
+		public static final int right_arrow = 0x7f0200f1;
 	}
 	public static final class id {
 		public static final int action_bar = 0x7f060041;

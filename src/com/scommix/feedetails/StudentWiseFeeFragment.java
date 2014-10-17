@@ -140,10 +140,13 @@ public class StudentWiseFeeFragment extends Fragment{
 			{
 				if (isCancelled())  break;
 				Log.i("result"+i, answer.get(i).name);
+				Log.i("result"+i, answer.get(i).feehead);
 				Log.i("result"+i, answer.get(i).totalamount);
 				Log.i("result"+i, answer.get(i).totalconcession);
+				Log.i("result"+i, answer.get(i).text);
 				Log.i("result"+i, answer.get(i).amount);
 				Log.i("result"+i, answer.get(i).previousbalance);
+				
 			}
 			
 			return null;
@@ -177,6 +180,9 @@ public class StudentWiseFeeFragment extends Fragment{
 			// TODO Auto-generated constructor stub
 			this.activity=activity;
 			this.answer=answer;
+			
+			
+			
 			inflaterr=(LayoutInflater)getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
 		}
@@ -209,12 +215,15 @@ public class StudentWiseFeeFragment extends Fragment{
 			{
 				vi=inflaterr.inflate(R.layout.row_stuwisefee, null);
 				 holder = new ViewHolder1();
-				holder.nametextview = (TextView)vi.findViewById(R.id.homeitemnametext); // duration
+				holder.nametextview = (TextView)vi.findViewById(R.id.homeitemnametextstuwise); // duration
+				holder.datestuwise = (TextView)vi.findViewById(R.id.DateStuwise);
 				//holder.star=(Button)vi.findViewById(R.id.star);
+				holder.totalamount=(TextView)vi.findViewById(R.id.homestatustimestuwise);
 				holder.totalconsession=(TextView)vi.findViewById(R.id.totalconcession);
-				holder.amount=(TextView)vi.findViewById(R.id.amount);
-				holder.statustextview=(TextView)vi.findViewById(R.id.homestatustext);
-				holder.statustimetextview=(TextView)vi.findViewById(R.id.homestatustime);
+				holder.totalfee = (TextView)vi.findViewById(R.id.totalfeeStuwise);
+				holder.amountpaid=(TextView)vi.findViewById(R.id.amount);
+				holder.previousbalance=(TextView)vi.findViewById(R.id.homestatustextstuwise);
+				
 				//holder.star=(Button)vi.findViewById(R.id.star);
 				vi.setTag(holder);
 		       
@@ -224,14 +233,16 @@ public class StudentWiseFeeFragment extends Fragment{
 				holder=(ViewHolder1)vi.getTag();
 			}
 			holder.nametextview.setText(answer.get(position).name);
-			holder.statustextview.setText("Previous Balance : "+answer.get(position).previousbalance);
-	        holder.statustimetextview.setText("Total Amount :"+answer.get(position).totalamount);
-			 holder.totalconsession.setText("Total Concession :"+answer.get(position).totalconcession);
-	        holder.amount.setText("Amount :"+answer.get(position).amount);
+			holder.datestuwise.setText("Date : " +  answer.get(position).feehead);
+			holder.totalamount.setText("Total Amount : "+answer.get(position).totalamount);
+			holder.totalconsession.setText("Total Concession : "+answer.get(position).totalconcession);
+	        holder.amountpaid.setText("Amount Paid : "+answer.get(position).amount);
+	        holder.totalfee.setText("Total Fee : " + answer.get(position).text);
+	        holder.previousbalance.setText("Previous Balance : "+answer.get(position).previousbalance);
 	        return vi;
 		}
 		class ViewHolder1{
-			TextView nametextview,statustextview,statustimetextview,totalconsession,amount;
+			TextView nametextview , datestuwise, totalamount ,totalconsession, totalfee , previousbalance , amountpaid;
 			
 		}
 		

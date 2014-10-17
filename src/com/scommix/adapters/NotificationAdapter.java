@@ -8,10 +8,12 @@ import java.util.TimeZone;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.media.Image;
 import android.os.AsyncTask;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -88,6 +90,8 @@ this.notifyDataSetChanged();
 			holder = new ViewHolder();
 			holder.notificationtext=(TextView)vi.findViewById(R.id.notificationtext);
 			holder.notificationtiming=(TextView)vi.findViewById(R.id.notificationtime);
+			
+			
 		
 			vi.setTag(holder);
 	    }
@@ -95,6 +99,24 @@ this.notifyDataSetChanged();
 			holder=(ViewHolder)vi.getTag();
 		}
 		holder.notificationtext.setText(notificationtext.get(position));
+		
+		//set imageview 
+		if (notificationtype.get(position).equals("1")) {
+			
+			ImageView notificationimage= (ImageView)vi.findViewById(R.id.notificationimage);
+			notificationimage.setVisibility(View.VISIBLE);
+			notificationimage.setImageResource(R.drawable.likeicon);
+		}
+		if (notificationtype.get(position).equals("2")) {
+			
+			ImageView notificationimage= (ImageView)vi.findViewById(R.id.notificationimage);
+			notificationimage.setVisibility(View.VISIBLE);
+			notificationimage.setImageResource(R.drawable.commenticon);
+		}
+
+		
+		
+		Log.i("Notifications", notificationtext.get(position));
 		try {
 			holder.notificationtiming.setText(parseDate(position));
 		} catch (ParseException e) {
