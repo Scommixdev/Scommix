@@ -18,7 +18,23 @@
         <item >Male</item>
         <item >Female</item>
     </string-array>
-
+<string name="result_prompt">Select month to view result</string>
+    
+    <string-array name="result_month">
+        <item>--Select Month--</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
     
     <!-- string for navigation drawer -->
     <string-array name="nav_drawer_items">

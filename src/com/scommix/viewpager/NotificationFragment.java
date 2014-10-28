@@ -178,6 +178,9 @@ public class NotificationFragment extends Fragment {
 				
 				notificationidlist.add(notificationid.toString());
 				notificationtiming.add(postedtime.toString());
+				
+//				System.out.println("Notification time --->" +postedtime.toString());
+				
 				notificationtext.add(name.toString()+" "+text.toString());
 				notificationtype.add(ntype.toString());
 				notificationuserid.add(userid.toString());

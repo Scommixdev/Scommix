@@ -305,7 +305,7 @@ public class MyProfileAdapter extends BaseAdapter{
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a",
 	                                                    Locale.US); 
 	    
-	    dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+	    dateFormat.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
 	    long value=dateFormat.parse(myupdates2.get(position).statustime).getTime();  
 		CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
 				Long.parseLong(String.valueOf(value)),

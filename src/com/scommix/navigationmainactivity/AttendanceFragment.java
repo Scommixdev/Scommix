@@ -400,7 +400,7 @@ public class AttendanceFragment extends Fragment{
 			
 			holder.attendanceofclass.setText("Class :"+attendance.get(position)._classField);
 			holder.attendancetype.setText("Presence :"+attendance.get(position).examinationtypes);
-			holder.attendanceperiod.setText(attendance.get(position).finalgrade);
+			holder.attendanceperiod.setText("Period :" +attendance.get(position).finalgrade);
 			holder.attendancesubject.setText("Teacher's Name :"+attendance.get(position).academicyear);
 			holder.Dateattendance.setText(attendance.get(position).date);
 			

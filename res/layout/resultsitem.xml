@@ -5,7 +5,8 @@
     android:background="@drawable/card_background"
     android:orientation="vertical" >
 
-    <TextView
+    <!--
+         <TextView
         android:id="@+id/heading"
         style="@android:style/TextAppearance.Medium"
         android:layout_width="wrap_content"
@@ -14,8 +15,57 @@
         android:layout_centerHorizontal="true"
         android:paddingBottom="20dp"
         android:text="Exam name" />
+    -->
+
+  <!--   <TextView
+        android:id="@+id/finalgrade"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="A+" /> -->
 
     <TextView
+        android:id="@+id/subjecttextview"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       
+        android:layout_centerHorizontal="true"
+        android:text="Social Science" />
+
+    <TextView
+        android:id="@+id/testtype"
+        style="@android:style/TextAppearance.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subjecttextview"
+        android:layout_centerHorizontal="true"
+        android:text="Term Test" />
+
+    <TextView
+        android:id="@+id/marks"
+        style="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/testtype"
+        android:gravity="center"
+        android:layout_marginTop="17dp"
+        android:text="95" />
+
+    <TextView
+        android:id="@+id/obtainedmarks"
+        style="@android:style/TextAppearance.Medium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       android:gravity="center"
+        android:layout_below="@+id/marks"
+        android:text="95" />
+
+    <!--
+         <TextView
         android:id="@+id/finalpercentage"
         style="@android:style/TextAppearance.Medium"
          android:layout_width="match_parent"
@@ -24,26 +74,11 @@
         android:layout_below="@+id/obtainedmarks"
         android:layout_marginTop="24dp"
         android:text="Percenatge" />
+    -->
 
-    <TextView
-        android:id="@+id/obtainedmarks"
-        style="@android:style/TextAppearance.Medium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/finalgrade"
-        android:layout_below="@+id/marks"
-        android:text="95" />
 
-    <TextView
-        android:id="@+id/finalgrade"
-        style="@android:style/TextAppearance.Medium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/obtainedmarks"
-        android:text="A+" />
-
-    <TextView
+    <!--
+         <TextView
         android:id="@+id/academicyear"
         style="@android:style/TextAppearance.Medium"
         android:layout_width="wrap_content"
@@ -51,27 +86,11 @@
         android:layout_alignBottom="@+id/heading"
         android:layout_centerHorizontal="true"
         android:text="2010-2011" />
+    -->
 
-    <TextView
-        android:id="@+id/marks"
-        style="@android:style/TextAppearance.Medium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/date"
-        android:layout_marginTop="17dp"
-        android:text="95" />
 
-    <TextView
-        android:id="@+id/subjecttextview"
-        style="@android:style/TextAppearance.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/heading"
-        android:layout_centerHorizontal="true"
-        android:text="Social Science" />
-
-    <TextView
+    <!--
+         <TextView
         android:id="@+id/date"
         style="@android:style/TextAppearance.Medium"
         android:layout_width="wrap_content"
@@ -79,5 +98,6 @@
         android:layout_below="@+id/subjecttextview"
         android:layout_centerHorizontal="true"
         android:text="20th March 2014" />
+    -->
 
 </RelativeLayout>

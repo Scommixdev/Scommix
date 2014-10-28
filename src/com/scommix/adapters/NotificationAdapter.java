@@ -171,15 +171,18 @@ this.notifyDataSetChanged();
 	public String parseDate(int position) throws ParseException
 	{
 	    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a",
-	                                                    Locale.US); 
+	                                                    Locale.getDefault()); 
 	    
-	    dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+	    dateFormat.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
 	    long value=dateFormat.parse(notificationtiming.get(position)).getTime();  
 		CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
 				Long.parseLong(String.valueOf(value)),
 				System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
 		
-	    return timeAgo.toString();
+		System.out.println("Notification Timing :"  + notificationtiming.get(position));
+		System.out.println("Notification Timing  parsed:"  + timeAgo.toString());
+	    
+		return timeAgo.toString();
 	}
 	static class ViewHolder
 	{

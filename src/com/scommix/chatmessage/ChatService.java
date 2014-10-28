@@ -97,11 +97,14 @@ public class ChatService extends Service{
 				Date valuetime = null;
 				try {
 					valuetime = new SimpleDateFormat("HH:mm a", Locale.ENGLISH).parse(ab.get(i).senttime);
+					System.out.println("Sent time :---->" + ab.get(i).senttime);
+					System.out.println("Sent time :---->" + valuetime);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				obj.setTime(valuetime);
+//				obj.setTime(valuetime);
+				obj.setTime(ab.get(i).senttime);
 				msgs.add(i, obj);
 			}
 			

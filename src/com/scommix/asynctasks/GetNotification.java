@@ -118,7 +118,7 @@ public class GetNotification extends AsyncTask<Void, Void, Void>
 		httpTransport.call(SOAP_ACTION, envelope);
 		SoapObject results=(SoapObject)envelope.getResponse();
 		
-		System.out.println("valuees---->>>" + results);
+		System.out.println("values---->>>" + results);
 		int i;
 
 		for(i=0;i<results.getPropertyCount();i++)
@@ -133,6 +133,9 @@ public class GetNotification extends AsyncTask<Void, Void, Void>
 			
 			notificationidlist.add(i, notificationid.toString());
 			notificationtiming.add(i, postedtime.toString());
+			
+			System.out.println("Notification time --->" +postedtime.toString());
+			
 			notificationtext.add(i, name.toString()+" "+text.toString());
 			notificationtype.add(i, ntype.toString());
 			notificationuserid.add(i, userid.toString());

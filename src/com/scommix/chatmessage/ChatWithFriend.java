@@ -59,6 +59,7 @@ public class ChatWithFriend extends ActionBarActivity{
      String friendname;
      EditText message ;
      MessageReceiver receiver;
+     
    
     
      ActionBar action;
@@ -102,8 +103,11 @@ public class ChatWithFriend extends ActionBarActivity{
 				 mText = message.getText().toString();
                    if(mText.equals("")==false)
                     {
+                	   SimpleDateFormat df = new SimpleDateFormat("HH:mm a");
                 	Date valuetime=Calendar.getInstance().getTime();
-                    	msgs.add(new ChatMessage(mText,valuetime , true));
+                	String reportDate = df.format(valuetime);
+//                    	msgs.add(new ChatMessage(mText,valuetime , true));
+                	msgs.add(new ChatMessage(mText,reportDate , true));
                       adapter.notifyDataSetChanged();
                     
                     message.setText("");
@@ -328,9 +332,14 @@ public class ChatWithFriend extends ActionBarActivity{
 		        holder.txtInfo = (com.scommix.customviews.MessageItemTextView) v.findViewById(R.id.txtInfo);
 		        return holder;
 		    }
+//	//we are using as time in string format as we are reciving
 
-		    private String getTimeText(Date date) {
-		        return DateFormat.format(DATE_FORMAT, date).toString();
+//		    private String getTimeText(Date date) {
+//		        return DateFormat.format(DATE_FORMAT, date).toString();
+//		    }
+		    
+		    private String getTimeText(String date) {
+		        return  date;
 		    }
 
 		    private  class ViewHolder {
@@ -440,7 +449,10 @@ public class ChatWithFriend extends ActionBarActivity{
 		protected Void doInBackground(Void... params) {
 			// TODO Auto-generated method stub
 			//fvknfadvnbfjkvjkfavl
-			ArrayList<online> ab=new ArrayList<online>();
+			
+			ArrayList<online> ab =new ArrayList<online>();
+		     
+			 
 			ab=new Common().GetMessage(ScommixSharedPref.getUSERID(), friendid);
 			msgs=new ArrayList<ChatMessage>();
 			for(int i=0;i<ab.size();i++)
@@ -465,7 +477,9 @@ public class ChatWithFriend extends ActionBarActivity{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				obj.setTime(valuetime);
+//				obj.setTime(valuetime);
+				obj.setTime(ab.get(i).senttime);
+
 				msgs.add(i, obj);
 			}
 			

@@ -22,7 +22,6 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/notificationtext"
         android:layout_marginRight="22dp"
-        android:text="timee"
         android:textColor="@android:color/darker_gray" />
 
     <ImageView

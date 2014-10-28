@@ -1,32 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
-    
 
+    <TextView
+        android:id="@+id/resulttextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="@string/result_prompt"
+        android:textSize="15sp"
+        android:textStyle="bold" />
 
+    <Spinner
+        android:id="@+id/r_month"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/resulttextview"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:entries="@array/result_month"
+        android:prompt="@string/result_prompt" />
 
-      <com.handmark.pulltorefresh.library.PullToRefreshGridView
-         xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
         android:id="@+id/resultslist"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_alignBottom="@+id/r_month"
         android:layout_alignParentBottom="true"
         android:layout_below="@+id/main_widget2"
         android:clickable="false"
         android:divider="@null"
-        android:fastScrollEnabled="false"
         android:dividerHeight="10dp"
+        android:fastScrollEnabled="false"
         android:scrollbars="none"
-      
-        ptr:ptrDrawable="@drawable/ic_launcher" 
-        >
+        ptr:ptrDrawable="@drawable/ic_launcher" >
     </com.handmark.pulltorefresh.library.PullToRefreshGridView>
 
-
-    
-</RelativeLayout>
-
-
-
+</LinearLayout>

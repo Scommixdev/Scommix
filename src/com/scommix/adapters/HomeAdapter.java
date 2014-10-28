@@ -246,13 +246,15 @@ void demoteview(int position)
 		{
 		    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a",
 		                                                    Locale.getDefault()); 
-		    dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
+		    dateFormat.setTimeZone(TimeZone.getTimeZone("GMT+5:30"));
 
-		    long value=dateFormat.parse(allupdates.get(position).statustime).getTime();  
+		    long value=dateFormat.parse(allupdates.get(position).statustime).getTime(); 
+		    
 			CharSequence timeAgo = DateUtils.getRelativeTimeSpanString(
 					Long.parseLong(String.valueOf(value)),
 					System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS);
 			
+
 		    return timeAgo.toString();
 		}
 	
