@@ -11,12 +11,14 @@ import org.ksoap2.transport.HttpTransportSE;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.ActionBar;
 import android.util.Base64;
 import android.util.Log;
@@ -31,6 +33,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.scommix.animation.Techniques;
+import com.scommix.animation.YoYo;
 import com.scommix.sharedpref.ScommixSharedPref;
 import com.svimedu.scommix.R;
 import com.scommix.tools.OSUtil;
@@ -299,9 +303,12 @@ protected void onPreExecute() {
 						Toast t=Toast.makeText(getApplicationContext(), 
 								"Something Wrong!", Toast.LENGTH_SHORT); 
 						t.setGravity(Gravity.TOP|Gravity.CENTER, 0, 0);
-						
-						
 						t.show();
+						Vibrator vir=(Vibrator)LoginFirstRun.this.getSystemService(Context.VIBRATOR_SERVICE);
+						vir.vibrate(200);
+						YoYo.with(Techniques.shakeanimator).duration(1500).playOn(username);
+						YoYo.with(Techniques.shakeanimator).duration(1500).playOn(password);
+
 					}
 					break;
 					case 1:

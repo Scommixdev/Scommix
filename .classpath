@@ -9,5 +9,7 @@
 	<classpathentry exported="true" kind="lib" path="E:/Android/Android Libraries, jars and Samples/jars/nineoldandroids-2.4.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="E:/Android/Android Libraries, jars and Samples/jars/picasso-2.3.4.jar"/>
 	<classpathentry exported="true" kind="lib" path="E:/Android/Android Libraries, jars and Samples/jars/Parse-1.5.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/Android/Android Libraries, jars and Samples/jars/AndroidEasingFunctions-1.0.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="E:/Android/Android Libraries, jars and Samples/jars/AndroidViewAnimations-1.1.2.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

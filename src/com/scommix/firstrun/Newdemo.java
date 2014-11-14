@@ -3,6 +3,8 @@ package com.scommix.firstrun;
 
 import org.kobjects.mime.Decoder;
 
+import com.scommix.animation.Techniques;
+import com.scommix.animation.YoYo;
 import com.svimedu.scommix.LoginFirstRun;
 import com.svimedu.scommix.R;
 
@@ -20,7 +22,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class Newdemo extends Activity{
-	ImageView iv;
+	ImageView iv,logo;
 	  Button go;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +46,8 @@ public class Newdemo extends Activity{
 		 
 		setContentView(R.layout.newdemo);
 		iv=(ImageView)findViewById(R.id.img);
+		logo=(ImageView)findViewById(R.id.logo);
+		YoYo.with(Techniques.FadeInRight).duration(2000).playOn(logo);
 		
 		
 		 go=(Button)findViewById(R.id.go);

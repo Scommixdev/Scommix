@@ -6,26 +6,6 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener;
-import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
-import com.handmark.pulltorefresh.library.PullToRefreshGridView;
-import com.scommix.WebServices.Common.Common;
-import com.scommix.WebServices.Common.StuNotice;
-import com.scommix.WebServices.Common.Updates;
-import com.scommix.WebServices.Common.VectorStuNotice;
-import com.scommix.WebServices.Common.Vectoronline;
-import com.scommix.WebServices.Common.online;
-import com.scommix.adapters.HomeAdapter;
-
-import com.scommix.asynctasks.LikeTask;
-import com.scommix.homeandprofile.CommentBox;
-import com.scommix.sharedpref.ScommixSharedPref;
-import com.scommix.tools.Utils;
-import com.squareup.picasso.Picasso;
-import com.svimedu.scommix.MainApp;
-import com.svimedu.scommix.R;
-
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -33,23 +13,36 @@ import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.ActionBarActivity;
 import android.text.Html;
 import android.text.format.DateUtils;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.handmark.pulltorefresh.library.PullToRefreshBase;
+import com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener2;
+import com.handmark.pulltorefresh.library.PullToRefreshGridView;
+import com.scommix.WebServices.Common.Common;
+import com.scommix.WebServices.Common.StuNotice;
+import com.scommix.WebServices.Common.Vectoronline;
+import com.scommix.WebServices.Common.online;
+import com.scommix.homeandprofile.CommentBox;
+import com.scommix.sharedpref.ScommixSharedPref;
+import com.svimedu.scommix.MainApp;
+import com.svimedu.scommix.R;
 
 public class Notice extends Fragment{
 	
@@ -65,6 +58,7 @@ public class Notice extends Fragment{
     int tillnow;
     GetNotice taskgetnotice;
     GetNotice1 taskGetNotice1;
+    TextToSpeech texttospeech;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -135,10 +129,37 @@ public class Notice extends Fragment{
 		}
 		
 	});
+	
+	texttospeech=new TextToSpeech(getActivity(), new TextToSpeech.OnInitListener() {
+		
+		@Override
+		public void onInit(int status) {
 
+			if(status!=TextToSpeech.ERROR){
+				texttospeech.setLanguage(Locale.UK);
+				
+			}
+		}
+	});
+
+	mynoticelist.setOnItemClickListener(new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+				long arg3) {
+			String tospeak = Html.fromHtml(noticeupdates.get(position).notice).toString();
+			
+			if (tospeak.length() > 1) {
+				tospeak = tospeak.toLowerCase(Locale.UK);
+		    } 
+			System.out.println(tospeak);
+			
+			texttospeech.speak(tospeak, TextToSpeech.QUEUE_FLUSH, null);
+						
+		}
+	});
 	
-	
-	
+
 	
 		return rooView;
 	
